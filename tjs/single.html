@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tjs.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="shortcut icon" href="tj's logo.png" type="image/x-icon">
+    <title>Tj's</title>
+</head>
+<body>
+<div class="start">
+    <h2>
+        Featured drinks
+    </h2>
+</div>
+<section id="pro-details">
+    <div class="single-pro-image">
+        <img src="gilbeys 750 pink.jpeg" id="mainImg" width="100%">
+
+        <div class="small-img-group">
+            <div class="small-img-col"><img src="gilbeys 250.jpeg" alt="" width="100%" class="small-img"></div>
+            <div class="small-img-col"><img src="gilbeys 350.jpeg" alt="" width="100%" class="small-img"></div>
+            <div class="small-img-col"><img src="gilbyeys 750 gin.jpeg" alt="" width="100%" class="small-img"></div>
+            <div class="small-img-col"><img src="gilbeys 750 pink.jpeg" alt="" width="100%" class="small-img"></div>
+
+        </div>
+    </div>
+    <div class="single-pro-details">
+        <h4>Gilbeys</h4>
+        <select id="mlSelect">
+            <option value="250" data-image="">250ml</option>
+            <option value="350" data-image="">350ml</option>
+            <option value="750" data-image="" selected>750ml</option>
+            <option value="1000" data-image="">1000ml</option>
+        </select>
+        <div class="form">
+            <div class="type-select">
+                <p>Type</p>
+                <label for="gin">
+                    <input type="radio" id="Gin" name="type">
+                    <span>Gin</span>
+                </label>
+
+                <label for="Pink">
+                    <input type="radio" id="Pink" name="type">
+                    <span>Pink</span>
+                </label>
+            </div>
+            <div class="quantity-select">
+                <p>Quantity:</p>
+                <input type="number" value="1">
+            </div>
+            <button type="submit">Add to cart</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+
+  <ul class="social-icons">
+      <li><a href="barandgrilltjs@gmail.com"><i class="bx bxl-gmail">Gmail</i></box-icon></a></li>
+      <li><a href="https://facebook.com/profile.php?id=100090210535556"><i class="bx bxl-facebook-circle"></i>Facebook</box-icon></a></li>
+      <li><a href="#"><i class="bx bxl-instagram">Instagram</i></a></li>
+      <li><a href="#"><i class="bx bxl-twitter">Twitter</i></a></li>
+  </ul>
+
+  <ul class="quick-links">
+      <li><a href="tjs.html">Dashboard</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="#">Discounts & Offers</a></li>
+      <li><a href="#">Cart</a></li>
+  </ul>
+
+</footer>
+
+
+<script>
+        var mainImg = document.getElementById("mainImg");
+
+var mlSelect = document.getElementById("mlSelect");
+
+
+function updateImage() {
+
+    var selectedMl = mlSelect.options[mlSelect.selectedIndex].value;
+
+    var imageFilename = mlSelect.options[mlSelect.selectedIndex].getAttribute('data-image');
+
+    mainImg.src = 'images/' + imageFilename;
+
+}
+
+
+mlSelect.onchange = updateImage;
+
+updateImage();
+
+
+</script>
+
+
+</body>
+</html>
